@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+ * @author 18th DigiTech Team
+ * @copyright Copyright (c) 2020 18th DigiTech (https://www.18thdigitech.com)
+ * @package Eighteentech_Givex
+-->
+
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="quote" resource="default" engine="innodb">
+		<column xsi:type="varchar" name="givex_giftcard_preauth_code" nullable="true" length="255"/>
+    </table>
+    <table name="sales_order" resource="default" engine="innodb">
+        <column xsi:type="varchar" name="givex_giftcard_preauth_code" nullable="true" length="255"/>
+        <column xsi:type="varchar" name="givex_giftcard_postauth_ref" nullable="true" length="255"/>
+        <column xsi:type="int" name="givex_fulfilment_job_id" nullable="false" default="0"/>
+    </table>
+    <table name="givex_ecert_fulfilment">
+        <column xsi:type="int" name="id" unsigned="true" padding="10" identity="true" nullable="false" />
+        <column xsi:type="int" name="order_id" unsigned="true" padding="10" nullable="false" />
+        <column xsi:type="int" name="order_item_id" unsigned="true" padding="10" nullable="false" />
+        <column xsi:type="int" name="item_qty" unsigned="true" padding="10" nullable="false" />
+        <column xsi:type="varchar" name="sender_name" nullable="false" length="255" />
+        <column xsi:type="varchar" name="sender_email" nullable="false" length="255" />
+        <column xsi:type="varchar" name="recipient_name" nullable="false" length="255" />
+        <column xsi:type="varchar" name="recipient_email" nullable="false" length="255" />
+        <column xsi:type="text" name="recipient_message" nullable="false" />
+        <column xsi:type="varchar" name="giftcard_code" nullable="false" length="255" />
+        <column xsi:type="varchar" name="givex_number" nullable="false" length="255" />
+        <column xsi:type="boolean" name="is_email_sent" nullable="false" default="0" />
+        <column xsi:type="boolean" name="is_error" nullable="false" default="0" />
+        <column xsi:type="varchar" name="givex_status" nullable="false" default="0"/>
+        <column xsi:type="double" name="gift_card_value" scale="4" precision="12" unsigned="true" nullable="false" />
+        <column xsi:type="varchar" name="order_increment_id" nullable="false" length="255"/>
+        <column xsi:type="datetime" name="created_utc" nullable="false" default="CURRENT_TIMESTAMP" on_update="false" />
+        <column xsi:type="varchar" name="item_identifier" nullable="false"/>
+        <column xsi:type="datetime" name="completed_utc" nullable="true" />
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="GIVEX_ECERT_FULFILMENT_ORDER_ID_SALES_ORDER_ENTITY_ID" table="givex_ecert_fulfilment" column="order_id" referenceTable="sales_order" referenceColumn="entity_id" onDelete="CASCADE"/>
+    </table>
+</schema>

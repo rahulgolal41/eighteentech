@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * @author 18th DigiTech Team
+ * @copyright Copyright (c) 2020 18th DigiTech (https://www.18thdigitech.com)
+ * @package Eighteentech_Givex
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="eighteentech_config_tab" translate="label" sortOrder="999">
+            <label>18thDigitech</label>
+        </tab>        
+        <section id="givexconfig" translate="label" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Givex</label>
+            <tab>eighteentech_config_tab</tab>
+            <resource>Eighteentech_Givex::config_giftcardgeneral</resource>
+            <group id="generalconfig" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="givexapi" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Givex API</label>                                            
+                <field id="givexprimaryapi" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Primary API URL</label>
+                    <comment>The XML RPC endpoint URL. E.g. For development, this is: https://dev-dataconnect.givex.com:50060/.</comment>
+                </field> 
+                <field id="givexsecondaryapi" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Secondary API URL</label>
+                    <comment>The failover endpoint URL, as mandated by GiveX. If a call to the primary URL times out, it will be retried using the secondary URL.</comment>
+                </field>               
+				<field id="givexuserid" translate="label" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>User ID</label>
+                    <comment>As provided by GiveX.</comment>
+                </field>         
+                <field id="givexpassword" translate="label" type="password" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Password</label>
+                    <comment>As provided by GiveX.</comment>
+                </field>
+                <field id="givexreferenceid" translate="label" type="text" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Reference Id</label>
+                </field> 
+                <field id="givexporta" translate="label" type="text" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>PORT A</label>
+                    <comment>As provided by GiveX.</comment>
+                </field>  
+                <field id="givexportb" translate="label" type="text" sortOrder="16" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>PORT B</label>
+                    <comment>As provided by GiveX.</comment>
+                </field>  
+                <field id="givexportc" translate="label" type="text" sortOrder="18" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>PORT C</label>
+                    <comment>As provided by GiveX.</comment>
+                </field>
+            </group>
+            
+            <group id="cronjobconfig" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Cron Jobs Frequency</label>
+                <field id="importfulfilmentjobs" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Card Fulfilment</label>
+                    <comment>Card Fulfilment Process.</comment>
+                </field>                                          
+                <field id="cleanfulfilmentlogs" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Clean Card Fulfilment Logs</label>
+                    <comment>Run at 11PM every night (0 23 * * *).
+                    To clear the process logs in DB.</comment>
+                </field>                           
+            </group>
+            <group id="logsconfig" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Logs</label>                
+                <field id="fulfilmentcleantime" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Clean Card Fulfilment Log Process Every</label>
+                    <comment>Day(s). If empty or zero, the process log will not be cleaned.</comment>
+                </field>                             
+            </group>
+            
+        </section>
+    </system>
+</config>
