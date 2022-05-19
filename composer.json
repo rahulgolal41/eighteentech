@@ -3,18 +3,12 @@
   "description": "Giftcard Givex Extension",
   "type": "magento2-module",
   "version": "1.0.0",
-  "keywords": [
-   "magento 2",
-   "eighteentech",
-   "givex giftcard",
-   "givex giftcard integration"
- ],
   "license": [
     "OSL-3.0",
     "AFL-3.0"
   ],
   "require": {
-    "php": "~7.2.0||~7.3.0||~7.4.0"
+    "php": "~7.2.0|~7.3.0|~7.4.0"
   },
   "autoload": {
     "files": [ "registration.php" ],
@@ -22,6 +16,14 @@
       "Eighteentech\\givex\\": ""
     }
   },
+  "authors": [
+   {
+     "name": "Eighteentech",
+     "email": "https://www.18thdigitech.com",
+     "homepage": "https://www.18thdigitech.com",
+     "role": "Technical Support"
+   }
+ ],
   "minimum-stability": "stable",
   "prefer-stable": true
 }
