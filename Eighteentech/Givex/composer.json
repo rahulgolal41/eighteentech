@@ -28,6 +28,6 @@
      "Eighteentech\\Givex\\": ""
    },
    "minimum-stability": "alpha",
-    "prefer-stable": true,
+   "prefer-stable": true
  }
 }
