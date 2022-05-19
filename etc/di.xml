@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+ * @author 18th DigiTech Team
+ * @copyright Copyright (c) 2020 18th DigiTech (https://www.18thdigitech.com)
+ * @package Eighteentech_Givex
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\GiftCardAccount\Model\Service\GiftCardAccountManagement">
+        <plugin name="givex_giftcard_checkbal" type="Eighteentech\Givex\Plugin\Model\Service\GiftCardAccountManagement" disabled="false"/>
+    </type>
+    <type name="Magento\Sales\Api\OrderManagementInterface">
+        <plugin name="givex_giftcard_update_after_place" type="Eighteentech\Givex\Plugin\OrderManagement" disabled="false"/>
+    </type>
+    <preference for="Magento\GiftCard\Model\GiftCardItemEmail" type="Eighteentech\Givex\Model\GiftCardItemEmail"/>
+    <type name="Magento\Payment\Model\MethodList">
+        <plugin name="givex_refresh_giftcard" type="Eighteentech\Givex\Plugin\Model\MethodList" disabled="false"/>
+    </type>
+    <preference for="Magento\GiftCardAccount\Controller\Cart\QuickCheck" type="Eighteentech\Givex\Controller\Cart\Quick" />
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="givex_fulfilment_listing_data_source" xsi:type="string">
+                    Eighteentech\Givex\Model\ResourceModel\GivexEcertFulfilment\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>    
+    <virtualType name="Eighteentech\Givex\Model\ResourceModel\GivexEcertFulfilment\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">givex_ecert_fulfilment</argument>
+            <argument name="resourceModel" xsi:type="string">Eighteentech\Givex\Model\ResourceModel\GivexEcertFulfilment</argument>
+        </arguments>
+    </virtualType>
+</config>
