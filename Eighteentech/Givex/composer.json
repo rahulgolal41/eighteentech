@@ -27,6 +27,7 @@
    "psr-4": {
      "Eighteentech\\Givex\\": ""
    },
-   "minimum-stability": "dev"
+   "minimum-stability": "dev",
+   "prefer-stable": true,
   }
 }
