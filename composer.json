@@ -16,14 +16,6 @@
       "Eighteentech\\givex\\": ""
     }
   },
-  "authors": [
-   {
-     "name": "Eighteentech",
-     "email": "https://www.18thdigitech.com",
-     "homepage": "https://www.18thdigitech.com",
-     "role": "Technical Support"
-   }
- ],
   "minimum-stability": "stable",
   "prefer-stable": true
 }
