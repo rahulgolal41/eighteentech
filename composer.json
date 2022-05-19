@@ -16,5 +16,11 @@
     "psr-4": {
       "Eighteentech\\Givex\\": ""
     }
-  }
+  },
+  "repositories": [
+        {
+            "type": "composer",
+            "url": ["https://github.com/rahulgolal41/eighteentech"]
+        }
+    ]
 }
