@@ -17,5 +17,11 @@
       "Eighteentech\\givex\\": ""
     }
   },
+"psr-0": {
+          "": [
+              "app/code/",
+              "generated/code/"
+          ]
+        },
   "minimum-stability": "stable"
 }
