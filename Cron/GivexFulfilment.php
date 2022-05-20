@@ -2,7 +2,7 @@
 /**
  * @author 18th DigiTech Team
  * @copyright Copyright (c) 2020 18th DigiTech (https://www.18thdigitech.com)
- * @package Caratlane_SolitaireApi
+ * @package Eighteentech_Givex
  */
 
 namespace Eighteentech\Givex\Cron;
