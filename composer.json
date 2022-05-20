@@ -4,6 +4,14 @@
   "type": "magento2-module",
   "version": "1.0.0",
   "license": "proprietary",
+  "authors": [
+    {
+      "name": "Giftcard",
+      "email": "www.18thdigitech.com/",
+      "homepage": "www.18thdigitech.com/",
+      "role": "Technical Support"
+    }
+  ],
   "autoload": {
     "files": [
       "registration.php"
