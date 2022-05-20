@@ -2,12 +2,14 @@
   "name": "eighteentech/givex",
   "description": "Giftcard Givex Extension",
   "type": "magento2-module",
-  "version": "1.0.1",
   "license": "proprietary",
+  "require": {
+        "version": "1.0.0"
+    },
   "authors": [
     {
       "name": "18th DigiTech Team",
-      "email": "rahulgola41@gmail.com",
+      "email": "rahulgola@18thdigitech.net",
       "homepage": "https://www.18thdigitech.com",
       "role": "Technical Support"
     }
